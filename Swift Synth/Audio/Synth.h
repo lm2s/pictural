@@ -1,5 +1,5 @@
 //
-//  Synth_ObjC.h
+//  Synth.h
 //  Swift Synth
 //
 //  Created by Luís Silva on 26/11/2020.
@@ -7,10 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Oscillator.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Synth_ObjC : NSObject
+@interface Synth : NSObject
+
+@property (class, nonatomic, readonly) Synth* shared;
+
+@property (nonatomic, readwrite) float volume;
+
+- (void)setWaveformTo:(Signal)signal;
 
 @end
 

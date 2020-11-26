@@ -18,7 +18,7 @@
 		55FB1E6322EE0B8700AED3D2 /* UIColor+Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FB1E6222EE0B8700AED3D2 /* UIColor+Set.swift */; };
 		DB7A8236238817320075C7C1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DB7A8235238817320075C7C1 /* README.md */; };
 		F372280C25702EB9005CB828 /* Oscillator.m in Sources */ = {isa = PBXBuildFile; fileRef = F372280B25702EB9005CB828 /* Oscillator.m */; };
-		F372281125702EE3005CB828 /* Synth_ObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = F372281025702EE3005CB828 /* Synth_ObjC.m */; };
+		F372281125702EE3005CB828 /* Synth.m in Sources */ = {isa = PBXBuildFile; fileRef = F372281025702EE3005CB828 /* Synth.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,8 +37,8 @@
 		F372280925702EB9005CB828 /* Swift Synth-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swift Synth-Bridging-Header.h"; sourceTree = "<group>"; };
 		F372280A25702EB9005CB828 /* Oscillator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Oscillator.h; sourceTree = "<group>"; };
 		F372280B25702EB9005CB828 /* Oscillator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Oscillator.m; sourceTree = "<group>"; };
-		F372280F25702EE3005CB828 /* Synth_ObjC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Synth_ObjC.h; sourceTree = "<group>"; };
-		F372281025702EE3005CB828 /* Synth_ObjC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Synth_ObjC.m; sourceTree = "<group>"; };
+		F372280F25702EE3005CB828 /* Synth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Synth.h; sourceTree = "<group>"; };
+		F372281025702EE3005CB828 /* Synth.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Synth.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				550D025722E55477002C57C9 /* Synth.swift */,
-				F372280F25702EE3005CB828 /* Synth_ObjC.h */,
-				F372281025702EE3005CB828 /* Synth_ObjC.m */,
+				F372280F25702EE3005CB828 /* Synth.h */,
+				F372281025702EE3005CB828 /* Synth.m */,
 				550D025D22E557A5002C57C9 /* Oscillator.swift */,
 				F372280A25702EB9005CB828 /* Oscillator.h */,
 				F372280B25702EB9005CB828 /* Oscillator.m */,
@@ -211,7 +211,7 @@
 				F372280C25702EB9005CB828 /* Oscillator.m in Sources */,
 				550D025822E55477002C57C9 /* Synth.swift in Sources */,
 				550D024422E526DD002C57C9 /* SceneDelegate.swift in Sources */,
-				F372281125702EE3005CB828 /* Synth_ObjC.m in Sources */,
+				F372281125702EE3005CB828 /* Synth.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -3,3 +3,5 @@
 //
 
 #import "Oscillator.h"
+#import "Synth.h"
+
