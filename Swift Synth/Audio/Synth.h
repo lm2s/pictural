@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "Oscillator.h"
 
+typedef void (^PlayingStatusBlock)(BOOL isPlaying);
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Synth : NSObject
@@ -18,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readwrite) float volume;
 
 - (void)setWaveformTo:(Signal)signal;
+
+- (void)trackPlayingStatus:(PlayingStatusBlock)playingStatusBlock;
 
 @end
 

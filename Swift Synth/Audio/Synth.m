@@ -17,6 +17,7 @@
 @property (nonatomic, assign) float sampleRate;
 @property (nonatomic, assign) float deltaTime;
 @property (nonatomic, copy) Signal signal;
+@property (nonatomic, copy) PlayingStatusBlock isPlayingStatusBlock;
 
 @end
 
@@ -96,6 +97,8 @@
 
 - (void)setVolume:(float)volume {
     _audioEngine.mainMixerNode.outputVolume = volume;
+
+    self.isPlayingStatusBlock(volume == 0.0 ? NO : YES);
 }
 
 - (float)volume {
@@ -104,6 +107,10 @@
 
 - (void)setWaveformTo:(Signal)signal {
     _signal = signal;
+}
+
+- (void)trackPlayingStatus:(PlayingStatusBlock)playingStatusBlock {
+    self.isPlayingStatusBlock = playingStatusBlock;
 }
 
 @end
