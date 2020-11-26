@@ -1,4 +1,4 @@
-
+/*
 import AVFoundation
 import Foundation
 
@@ -73,3 +73,4 @@ class Synth {
     }
     
 }
+*/

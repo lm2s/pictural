@@ -28,11 +28,24 @@ class SynthViewController: UIViewController {
         return segmentedControl
     }()
 
+    private lazy var isPlayingLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .white
+        label.text = ""
+        label.translatesAutoresizingMaskIntoConstraints = false
+
+        return label
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
 		setUpView()
         setUpSubviews()
+
+        Synth.shared.trackPlayingStatus { [weak self] (isPlaying) in
+            self?.isPlayingLabel.text = isPlaying ? "Playing..." : ""
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -84,7 +97,7 @@ class SynthViewController: UIViewController {
     }
     
     private func setUpSubviews() {
-        view.add(waveformSelectorSegmentedControl, parameterLabel)
+        view.add(waveformSelectorSegmentedControl, parameterLabel, isPlayingLabel)
         
         NSLayoutConstraint.activate([
             waveformSelectorSegmentedControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
@@ -92,7 +105,10 @@ class SynthViewController: UIViewController {
             waveformSelectorSegmentedControl.widthAnchor.constraint(equalToConstant: 250),
             
             parameterLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
-            parameterLabel.centerYAnchor.constraint(equalTo: waveformSelectorSegmentedControl.centerYAnchor)
+            parameterLabel.centerYAnchor.constraint(equalTo: waveformSelectorSegmentedControl.centerYAnchor),
+
+            isPlayingLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            isPlayingLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10)
         ])
     }
     
